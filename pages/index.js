@@ -10,16 +10,16 @@ export default function Home(props) {
     const list = {
       ...enteredList,
     };
-
-    setListed(list);
-  };
-
-  console.log(listed);
+    setListed(enteredList)
+  }
+  console.log('index: ')
+  console.log(listed)
+  
 
   return (
-    <div className="d-flex justify-content-center">
+    <div className="d-inline-flex flex-column justify-content-center">
       <Form onSaveList={saveListHandler} />
-      <UserList list={saveListHandler.list} />
+      <UserList list={listed} />
     </div>
   );
 }

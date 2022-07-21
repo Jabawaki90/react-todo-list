@@ -8,17 +8,17 @@ const Form = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username !== null && age !== null) {
-      userList.push({
+      setUserList([...userList, {
         username: username,
         age: age,
         id: Math.random().toString(),
-      });
+      }])
     }
     setUsername(null);
     setAge(null);
   };
 
-  // props.onSaveList(userList);
+  props.onSaveList(userList);
 
   return (
     <form
